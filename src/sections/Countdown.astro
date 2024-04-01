@@ -1,0 +1,105 @@
+---
+    import Excelverso from "@/icons/excelverso.astro"
+
+    const TIMESTAMP_END = 1712358000000
+---
+
+<section class="my-32 flex flex-col gap-y-10 justify-center items-center">
+    <Excelverso class="text-primary" />
+
+    <div
+     class="flex flex-row gap-x-1 text-primary uppercase font-semibold" 
+     data-date={TIMESTAMP_END}
+    >
+        <div class="flex flex-col justify-center items-center gap-y-2 w-16">
+            <span class="text-4xl tabular-nums" data-days>00</span>
+            <span class="text-xs text-center">Días</span>
+        </div>
+
+        <span aria-hidden="true" class="mt-1 text-xl">:</span>
+
+        <div class="flex flex-col justify-center items-center gap-y-2 w-16">
+            <span class="text-4xl tabular-nums" data-hours>00</span>
+            <span class="text-xs text-center">Horas</span>
+        </div>
+
+        <span aria-hidden="true" class="mt-1 text-xl">:</span>
+
+        <div class="flex flex-col justify-center items-center gap-y-2 w-16">
+            <span class="text-4xl tabular-nums" data-minutes>00</span>
+            <span class="text-xs text-center">Minutos</span>
+        </div>
+
+        <span aria-hidden="true" class="mt-1 text-xl">:</span>
+
+        <div class="flex flex-col justify-center items-center gap-y-2 w-16">
+            <span class="text-4xl tabular-nums" data-seconds>00</span>
+            <span class="text-xs text-center">Segundos</span>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    const SECOND = 1000
+    const MINUTE = SECOND * 60
+    const HOUR = MINUTE * 60
+    const DAY = HOUR *24
+
+    function init() {
+        const $contdown = document.querySelector('[data-date]')
+        if (!$contdown) return
+
+        const $days = $contdown.querySelector('[data-days]')
+        const $hours = $contdown.querySelector('[data-hours]')
+        const $minutes = $contdown.querySelector('[data-minutes]')
+        const $seconds = $contdown.querySelector('[data-seconds]')
+
+        const timestamp = $contdown.getAttribute('data-date')
+        if (!timestamp) return
+
+        let date = new Date(+timestamp).getTime()
+
+        const formatTime = (time: number) => {
+            return Math.floor(time).toString().padStart(2, "0")
+        }
+
+        function updateCountdown () {
+            const now = Date.now()
+            let diff = date - now
+
+            if (diff <= 0) {
+                // Si el contador llega a cero, calcular la fecha del próximo viernes a las 17:00 horas.
+                let nextFriday = new Date(now)
+                nextFriday.setDate(nextFriday.getDate() + (5 + 7 - nextFriday.getDay()) % 7) // Obtener el próximo viernes
+                nextFriday.setHours(17, 0, 0, 0) // Establecer las 17:00 horas
+
+                date = nextFriday.getTime()
+                diff = date - now
+
+            }
+
+            if ($days instanceof HTMLElement) {
+                $days.innerText = formatTime(diff / DAY)
+            }
+
+            if ($hours instanceof HTMLElement) {
+                $hours.innerText = formatTime((diff % DAY) / HOUR)
+            }
+
+            if ($minutes instanceof HTMLElement) {
+                $minutes.innerText = formatTime((diff % HOUR) / MINUTE)
+            }
+
+            if ($seconds instanceof HTMLElement) {
+                $seconds.innerText = formatTime((diff % MINUTE) / SECOND)
+            }
+
+        }
+
+        setInterval(updateCountdown, SECOND)
+        updateCountdown()
+    }
+
+    init()
+</script>
