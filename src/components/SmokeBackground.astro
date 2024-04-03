@@ -78,6 +78,14 @@
         if ("opacity" in material) {
           material.opacity = currentTheme.opacity;
         }
+      } else {
+        // Si particle.material es una lista de materiales
+        particle.material.forEach((material) => {
+          // Verificar si la propiedad opacity existe en el material
+          if ("opacity" in material) {
+            material.opacity = currentTheme.opacity;
+          }
+        });
       }
     }
   });
@@ -109,9 +117,5 @@
     currentTheme = THEME[themePreference];
     light.color.setHex(currentTheme.light);
     renderer.setClearColor(currentTheme.background, 1);
-
-    smokeParticles.forEach((particle) => {
-      particle.material.opacity = currentTheme.opacity;
-    });
   });
 </script>
