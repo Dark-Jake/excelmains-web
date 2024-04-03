@@ -7,7 +7,7 @@ export default defineConfig({
   site: "https://dark-jake.github.io/",
   base: "excelmains-web",
   integrations: [tailwind()],
-  buildOptions: {
+  build: {
     rollupOptions: {
       external: ["three"],
     },
