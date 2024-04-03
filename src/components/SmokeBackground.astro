@@ -69,6 +69,16 @@
       particle.rotation.z = Math.random() * 360;
       scene.add(particle);
       smokeParticles.push(particle);
+
+      // Verificar si particle.material es un solo material
+      if (!(particle.material instanceof Array)) {
+        // Forzar el tipo de particle.material a Material
+        const material = particle.material as THREE.Material;
+        // Verificar si la propiedad opacity existe en el material
+        if ("opacity" in material) {
+          material.opacity = currentTheme.opacity;
+        }
+      }
     }
   });
 
