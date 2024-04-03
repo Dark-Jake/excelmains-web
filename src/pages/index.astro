@@ -1,19 +1,25 @@
 ---
-import Layout from "@/layouts/Layout.astro"
+import Layout from "@/layouts/Layout.astro";
 
-import Countdown from "@/sections/Countdown.astro"
-import Footer from "@/sections/Footer.astro"
-import Hero from "@/sections/Hero.astro"
-import Info from "@/sections/Info.astro"
-import PrincipalDate from "@/sections/PrincipalDate.astro"
+import KonamiCode from "@/components/KonamiCode.astro";
+
+import Countdown from "@/sections/Countdown.astro";
+import Footer from "@/sections/Footer.astro";
+import Hero from "@/sections/Hero.astro";
+import Info from "@/sections/Info.astro";
+import PrincipalDate from "@/sections/PrincipalDate.astro";
 ---
 
-<Layout title="Excelverse">
-	<Hero />
-	<main>
-		<PrincipalDate />
-		<Info />
-		<Countdown />
-	</main>
-	<Footer />
+<Layout
+  description="Pagina dedicada a los cálculos y theorycraft del juego Genshin Impact"
+  title="Excelverse"
+>
+  <Hero />
+  <main>
+    <PrincipalDate />
+    <Info />
+    <Countdown />
+  </main>
+  <Footer />
+  <KonamiCode />
 </Layout>

@@ -1,53 +1,73 @@
+---
+import MapMarkerIcon from "@/icons/map-marker.astro";
+---
+
 <section
- class="animate-fade-in animate-delay-500 mt-32 mx-auto flex flex-col justify-center items-center text-center text-primary"
+  class="mx-auto mt-16 flex animate-fade-in flex-col place-items-center text-center text-primary animate-delay-[2s] md:mt-32"
 >
-    <h2 class="uppercase text-5xl font-semibold">
-        Todos los Viernes<span aria-hidden class="hidden md:inline mx-1">.</span><br 
-        aria-hidden 
-        class="block md:hidden" 
-        /><span>
-            <script is:inline>   
-                const END_DATE = 1711839600000
-                const d = new Date(END_DATE)
-                const date = d.toLocaleTimeString("es", {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                })
+  <div class="text-3xl font-semibold uppercase md:text-5xl">
+    <time class="date"> 12 de Abril</time>
+    <span aria-hidden="true" class="mx-1 hidden md:inline">·</span>
+    <br aria-hidden="true" class="block md:hidden" />
+    <time class="time"></time>
+  </div>
 
-                // get current timezone
-                const tzOffset = d.getTimezoneOffset() / 60
-                const diff = tzOffset * -1
-                const gmt = diff > 0 ? `GMT+${diff}` : `GMT-${Math.abs(diff)}`
+  <h2
+    class="mt-6 flex max-w-sm flex-col text-lg font-medium uppercase lg:text-2xl"
+  >
+    <span>Torneo de Casualines</span>
+    <a
+      href="https://discord.com/invite/YENa4TDxhu"
+      class="inline-block align-middle transition hover:scale-110 hover:opacity-60"
+      target="_blank"
+      rel="noopener"
+      style="display: -webkit-box;"
+      aria-label="servidor de discord, se abrirá en una nueva pestaña"
+    >
+      <MapMarkerIcon class="mr-1 max-md:mt-1 md:mt-0.5 md:size-6" /> Servidor de
+      Discord
+    </a>
+  </h2>
 
-                const TZ_DICTIONARY = {
-                    "GMT+1": "CET",
-                }
-
-                const tz = TZ_DICTIONARY[gmt] ?? gmt
-
-                const selfScript = document.currentScript
-                selfScript.parentNode.innerHTML = `${date}H ${tz}`
-            </script>
-        </span>
-    </h2>
-
-    <h3 class="uppercase text-2xl font-medium flex flex-col max-w-sm mt-6">
-        <span>Torneo de Casualines</span>
-        <span>Servidor de Discord (Excelverso)</span>
-    </h3>
-    
+  <div class="mt-6 flex flex-col items-center gap-6 md:flex-row">
     <a
       class={`
-      border-primary border-2 font-medium uppercase text-lg
-      px-4 py-1 mt-8
-      hover:bg-slate-300 hover:scale-125
-      transition inline-block
-      `}
+            inline-block border-2 border-primary px-4 py-1
+            text-lg font-medium
+            uppercase transition hover:scale-110
+            hover:bg-primary hover:text-secondary
+        `}
       href="https://discord.com/channels/1104977284609343558/1182044234371571752"
       target="_blank"
       rel="noopener noreferrer"
-      >
+      aria-label="inscripciones cerradas, se abrirá en una nueva pestaña"
+    >
       Inscripciones Cerradas
-        
     </a>
+  </div>
 </section>
+
+<script is:inline>
+  const END_DATE = 1711839600000;
+  const d = new Date(END_DATE);
+  const date = d.toLocaleTimeString("es", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
+  // obtener la zona horaria actual
+  const tzOffset = d.getTimezoneOffset() / 60;
+  const diff = tzOffset * -1;
+  const gmt = diff > 0 ? `GMT+${diff}` : `GMT-${Math.abs(diff)}`;
+
+  const TZ_DICTIONARY = {
+    "GMT+1": "CET",
+  };
+
+  const tz = TZ_DICTIONARY[gmt] ?? gmt;
+
+  const timeElement = document.querySelector(".time");
+  if (timeElement) {
+    timeElement.textContent = `${date}H ${tz}`;
+  }
+</script>

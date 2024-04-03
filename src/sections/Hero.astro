@@ -2,13 +2,13 @@
 import HeroLogo from "@/components/HeroLogo.astro";
 ---
 
-<section class="flex flex-col justify-center items-center">
-    <span
-        class="animate-fade-in animate-delay-300 text-xl uppercase text-secondary bg-primary px-6 py-1 mb-9 font-medium"
-    >
-        Developed by DarkJake
-    </span>
-    <HeroLogo
-        class="text-primary animate-fade-in-up w-full h-auto md:w-[1000px]" 
-    />
+<section class="flex flex-col place-items-center gap-4 lg:gap-9">
+  <h1 class="sr-only">Sepultadores de KQM</h1>
+  <span
+    class="animate-fade-in-up bg-primary px-3 py-0.5 text-base font-medium uppercase text-secondary animate-duration-1000 md:px-6 md:py-1 lg:text-xl"
+    aria-hidden="true"
+  >
+    Developed by DarkJake
+  </span>
+  <HeroLogo class="h-auto w-[700px] text-primary md:w-[900px]" />
 </section>
