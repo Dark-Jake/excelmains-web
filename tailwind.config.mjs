@@ -9,6 +9,7 @@ export default {
         primary: "var(--color-primary)",
         secondary: "var(--color-secondary)",
         youtube: "var(--color-youtube)",
+        ice: "var(--color-youtube-ice)",
       },
     },
   },
