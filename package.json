@@ -16,9 +16,7 @@
     "@midudev/tailwind-animations": "^0.0.7",
     "astro": "^4.5.12",
     "tailwindcss": "^3.4.3",
+    "three": "^0.163.0",
     "typescript": "^5.4.3"
-  },
-  "devDependencies": {
-    "@types/three": "^0.163.0"
   }
 }
