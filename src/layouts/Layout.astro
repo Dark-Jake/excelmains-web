@@ -1,4 +1,5 @@
 ---
+import ButtonUp from "@/components/ButtonUp.astro";
 import SmokeBackground from "@/components/SmokeBackground.astro";
 import "@fontsource-variable/jost";
 interface Props {
@@ -17,7 +18,7 @@ const { title, description } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
     <link rel="canonical" href="https://dark-jake.github.io/excelmains-web/" />
     <meta name="viewport" content="width=device-width" />
 
@@ -51,6 +52,7 @@ const { title, description } = Astro.props;
     <div class="mx-auto max-w-6xl px-2 pt-16 md:pt-20 lg:px-10">
       <slot />
     </div>
+    <ButtonUp />
   </body>
 </html>
 
@@ -59,25 +61,35 @@ const { title, description } = Astro.props;
     --color-primary: #333;
     --color-secondary: #ddd;
     --color-youtube: #a44141;
+    --color-youtube-ice: #f0f0ff
 
-    --background-color: var(--color-secondary);
-    --background-image: var(--background-color) url("/concrete.png") repeat;
+    --background-color: #ddd
+    --background-youtube: #000
   }
 
   .dark {
     --color-primary: #ddd;
     --color-secondary: #333;
-    --color-youtube: #ff7070;
 
-    --background-image: var(--background-color) url("/concrete-dark.png") repeat;
+    --background-color: #222;
+    --background-youtube: var(--color-youtube-ice)
   }
 
   html {
     font-family: "Jost Variable", system-ui, sans-serif;
-    background: var(--background-image);
-    scroll-behavior: smooth;
+    background: var(--background-color);
     overflow-x: hidden;
     overscroll-behavior: none;
+  }
+
+  main {
+    position: relative;
+  }
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 
   /* Hiding class, making content visible only to screen readers but not visually */
