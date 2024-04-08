@@ -61,18 +61,21 @@ const { title, description } = Astro.props;
     --color-primary: #333;
     --color-secondary: #ddd;
     --color-youtube: #a44141;
-    --color-youtube-ice: #f0f0ff
-
-    --background-color: #ddd
-    --background-youtube: #000
+    --color-youtube-ice: #f0f0ff --background-color: #ddd --background-youtube:
+      #000;
   }
 
   .dark {
     --color-primary: #ddd;
-    --color-secondary: #333;
+    --color-secondary: #1e1c1e;
 
-    --background-color: #222;
-    --background-youtube: var(--color-youtube-ice)
+    --background-color: #121212;
+    --background-youtube: var(--color-youtube-ice);
+  }
+
+  @font-face {
+    font-family: Atomic;
+    src: url("/excelmains-web/fonts/atomic.woff2") format("woff2");
   }
 
   html {
