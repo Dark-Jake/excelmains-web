@@ -1,7 +1,7 @@
 ---
     import Excelverso from "@/icons/excelverso.astro"
 
-    const TIMESTAMP_END = 1712358000000
+    const TIMESTAMP_END = 1712962800000
 ---
 
 <section class="my-0 flex flex-col place-items-center gap-y-10 lg:my-32" aria-label="cuenta atrás">
@@ -70,18 +70,31 @@
         }
 
         function updateCountdown () {
-            const now = Date.now()
-            let diff = date - now
+            let now = Date.now();
+            let diff = date - now;
 
             if (diff <= 0) {
-                // Si el contador llega a cero, calcular la fecha del próximo viernes a las 17:00 horas.
-                let nextFriday = new Date(now)
-                nextFriday.setDate(nextFriday.getDate() + (5 + 7 - nextFriday.getDay()) % 7) // Obtener el próximo viernes
-                nextFriday.setHours(17, 0, 0, 0) // Establecer las 17:00 horas
+                // Calcular la fecha actual a las 17:00 horas de hoy
+                let today = new Date(now);
+                today.setHours(17, 0, 0, 0);
 
-                date = nextFriday.getTime()
-                diff = date - now
+                // Calcular la fecha para 14 días en el futuro
+                let nextDate = new Date(today.getTime() + (14 * DAY));
 
+                // Si la fecha actual supera la fecha límite, reiniciar la cuenta regresiva para 14 días en el futuro
+                if (now > date) {
+                    date = nextDate.getTime();
+                } else {
+                    // Si no ha pasado la fecha límite, la cuenta regresiva sigue siendo la misma
+                    let nextFriday = new Date(now);
+                    nextFriday.setDate(nextFriday.getDate() + (5 + 7 - nextFriday.getDay()) % 7); // Obtener el próximo viernes
+                    nextFriday.setHours(17, 0, 0, 0); // Establecer las 17:00 horas
+
+                    date = nextFriday.getTime();
+                }
+
+                // Recalcular la diferencia
+                diff = date - now;
             }
 
             if ($days instanceof HTMLElement) {
