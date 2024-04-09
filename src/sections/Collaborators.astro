@@ -76,7 +76,7 @@ const COLLABORATORS = [
     {
       COLLABORATORS.map(({ id, name, url, twitter, youtube, twitch, kofi, instagram, tiktok }) => (
         <div class="group flex items-center justify-center w-full h-full">
-          <div class="relative w-full h-full">
+          <div class="group relative w-full h-full items-center justify-center overflow-hidden after:absolute after:bottom-0 after:left-0 after:h-full after:w-32 after:translate-x-[-400px] after:skew-x-[45deg] hover:after:animate-[glass-effect_.5s_ease-in-out]">
             <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-primary)] via-transparent to-transparent rounded-lg opacity-10 group-hover:opacity-30 transition-opacity duration-300"></div>
             <div class="relative z-10 bg-gradient-to-b from-transparent via-transparent to-transparent rounded-lg p-2 flex items-stretch w-full h-full">
               <img
@@ -151,3 +151,21 @@ const COLLABORATORS = [
     }
   </div>
 </section>
+<style>
+  @keyframes glass-effect {
+		0% {
+			background-color: #ffffff05;
+			transform: skewX(45deg) translateX(-400px);
+		}
+
+		50% {
+			background-color: #ffffff10;
+			transform: skewX(45deg) translateX(0px);
+		}
+
+		100% {
+			background-color: #ffffff05;
+			transform: skewX(45deg) translateX(400px);
+		}
+	}
+</style>
