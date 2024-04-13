@@ -26,18 +26,29 @@ import MapMarkerIcon from "@/icons/map-marker.astro";
 
 <script is:inline>
   // Función para calcular la próxima fecha en base a la fecha actual y el desplazamiento de semanas
-  function calculateNextDate() {
-    const today  = new Date();
-    const currentHour  = today.getHours();
-    
-    // Verificar si es después de las 17:00
-    if (currentHour >= 17) {
-      const twoWeeks  = 14 * 24 * 60 * 60 * 1000;
-      const nextDate  = new Date(today.getTime() + twoWeeks);
-      return nextDate;
+  function calculateNextFriday() {
+    const today = new Date();
+    const currentDay = today.getDay(); // Obtenemos el día de la semana (0 para Domingo, 1 para Lunes, ..., 6 para Sábado)
+    const currentHour = today.getHours();
+
+    // Si el día actual es viernes y la hora es después de las 17:00, sumamos dos semanas
+    if (currentDay === 5 && currentHour >= 17) { // 5 representa el Viernes
+      const twoWeeks = 14 * 24 * 60 * 60 * 1000; // Milisegundos en dos semanas
+      const nextFriday = new Date(today.getTime() + twoWeeks);
+      return nextFriday;
     } else {
-      // Si es antes de las 17:00hrs, mantener la fecha actual
-      return today;
+      // Si no es viernes o es antes de las 17:00 horas, buscamos el próximo viernes
+      let nextFriday = new Date(today);
+
+      // Añadimos días hasta llegar al próximo viernes
+      nextFriday.setDate(today.getDate() + (5 + 7 - currentDay) % 7);
+
+      // Si es antes de las 17:00, sumamos una semana más
+      if (currentHour < 17) {
+        nextFriday.setDate(nextFriday.getDate() + 7);
+      }
+
+      return nextFriday;
     }
   }
 
@@ -49,11 +60,11 @@ import MapMarkerIcon from "@/icons/map-marker.astro";
     });
   }
 
-  const nextDate  = calculateNextDate();
-  const formattedDate  = formatDate(nextDate);
+  const nextFriday = calculateNextFriday();
+  const formattedDate = formatDate(nextFriday);
 
-  // Actualizar el elemento de fecha en el HTML con la próxima fecha calculada
-  const dateElement  = document.querySelector(".date");
+  // Actualizar el elemento de fecha en el HTML con el próximo viernes calculado
+  const dateElement = document.querySelector(".date");
   if (dateElement) {
     dateElement.textContent = formattedDate;
   }
