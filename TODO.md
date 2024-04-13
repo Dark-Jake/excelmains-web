@@ -12,7 +12,7 @@
 
    - [x] Countdown
    - [x] Cambio de fecha de torneo automatica
-   - [ ] Degradado incompleto en el Nombre del personaje
+   - [x] Degradado incompleto en el Nombre del personaje
    - [ ] Boton de Inscripciones dinamico
    - [ ] Bug `Konami.astro`(⬆⬆⬇⬇⬅⮕⬅⮕ba)
 
