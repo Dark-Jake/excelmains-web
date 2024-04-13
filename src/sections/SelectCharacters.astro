@@ -107,19 +107,22 @@ const ListOFCharacters = CHARACTERS.map((character) => {
   const characterRegion = document.querySelector(".character-flag") as HTMLImageElement
 
   characterLinks.forEach((link) => {
-		link.addEventListener("mouseenter", (event) => {
-			const { id, name, region, regionName } = event.currentTarget?.dataset
+  link.addEventListener("mouseenter", (event) => {
+    const target = event.currentTarget;
+    if (target instanceof HTMLElement) {
+      const { id, name, region, regionName } = target.dataset;
 
-			const characterSrc = `/excelmains-web/img/characters/big/${id}-big.webp`
+      const characterSrc = `/excelmains-web/img/characters/big/${id}-big.webp`;
 
-			characterPhoto.src = characterSrc
-			characterTitle.innerText = name?.toLocaleLowerCase()
-			characterRegion.src = `/excelmains-web/img/flags/${region}.svg`
+      characterPhoto.src = characterSrc;
+      characterTitle.innerText = name?.toLocaleLowerCase() ?? "";
+      characterRegion.src = `/excelmains-web/img/flags/${region}.svg`;
 
-			characterPhoto.alt = `Fotografía de ${name}`
-			characterRegion.alt = `Escudo de ${regionName}`
-		})
-	})
+      characterPhoto.alt = `Fotografía de ${name}`;
+      characterRegion.alt = `Escudo de ${regionName}`;
+    }
+  });
+});
 </script>
 
 <style>
