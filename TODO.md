@@ -5,24 +5,32 @@
    - [x] Cambiar color al Hero y agregar efecto
    - [x] Efecto Smoke
    - [x] Usar Favicon
+   - [x] Optimizacion del Hero
+   - [x] Acortar timings de animacion
 
-2. Arreglar errores
+2. Arreglar errores y agregar caracteristicas
 
    - [x] Countdown
+   - [x] Cambio de fecha de torneo automatica
+   - [ ] Degradado incompleto en el Nombre del personaje
+   - [ ] Boton de Inscripciones dinamico
    - [ ] Bug `Konami.astro`(⬆⬆⬇⬇⬅⮕⬅⮕ba)
 
 3. Añadir apartado de colaboradores
    - [ ] Socios del Excelverso (Mario, Sanai, etc...)
    - [x] Mencion de los Colaboradores de la pag
+     - [ ] Agregar redes sociales de los colaboradores
    - [ ] Apartado de Creditos (Guias)
 
 <details><summary>4. Añadir apartados</summary>
 
 - Guias de Personajes
 
-  - [ ] Guia Basica
-  - [ ] Guia Avanzada
-  - [ ] Speedrun
+  - [ ] Seleccion de personajes
+
+    - [ ] Guia Basica
+    - [ ] Guia Avanzada
+    - [ ] Speedrun
 
 - Speedrun
 
