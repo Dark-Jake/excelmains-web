@@ -2,46 +2,85 @@
 import MapMarkerIcon from "@/icons/map-marker.astro";
 ---
 
-<section
-  class="mx-auto mt-16 flex animate-fade-in flex-col place-items-center text-center text-primary animate-delay-[1s] md:mt-32"
->
+<section class="mx-auto mt-16 flex animate-fade-in flex-col place-items-center text-center text-primary animate-delay-[1s] md:mt-32">
   <div class="text-3xl font-semibold uppercase md:text-5xl">
-    <time class="date"> 12 de Abril</time>
+    <time class="date"></time>
     <span aria-hidden="true" class="mx-1 hidden md:inline">·</span>
     <br aria-hidden="true" class="block md:hidden" />
     <time class="time"></time>
   </div>
 
-  <h2
-    class="mt-6 flex max-w-sm flex-col text-lg font-medium uppercase lg:text-2xl"
-  >
+  <h2 class="mt-6 flex max-w-sm flex-col text-lg font-medium uppercase lg:text-2xl">
     <span>Torneo de Casualines</span>
-    <a
-      href="https://discord.com/invite/YENa4TDxhu"
-      class="inline-block align-middle transition hover:scale-110 hover:opacity-60"
-      target="_blank"
-      rel="noopener"
-      style="display: -webkit-box;"
-      aria-label="servidor de discord, se abrirá en una nueva pestaña"
-    >
-      <MapMarkerIcon class="mr-1 max-md:mt-1 md:mt-0.5 md:size-6" /> Servidor de
-      Discord
+    <a href="https://discord.com/invite/YENa4TDxhu" class="inline-block align-middle transition hover:scale-110 hover:opacity-60" target="_blank" rel="noopener" style="display: -webkit-box;" aria-label="servidor de discord, se abrirá en una nueva pestaña">
+      <MapMarkerIcon class="mr-1 max-md:mt-1 md:mt-0.5 md:size-6" /> Servidor de Discord
     </a>
   </h2>
 
-  <div
-    class="scroll-horizontal mt-6 flex flex-col items-center gap-9 md:flex-row"
-  >
-    <a
-      href="https://discord.com/channels/1104977284609343558/1182044234371571752"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="inscripciones cerradas, se abrirá en una nueva pestaña"
-    >
+  <div class="scroll-horizontal mt-6 flex flex-col items-center gap-9 md:flex-row">
+    <a href="https://discord.com/channels/1104977284609343558/1182044234371571752" target="_blank" rel="noopener noreferrer" aria-label="inscripciones cerradas, se abrirá en una nueva pestaña">
       <span> Inscripciones Abiertas </span>
     </a>
   </div>
 </section>
+
+<script is:inline>
+  // Función para calcular la próxima fecha en base a la fecha actual y el desplazamiento de semanas
+  function calculateNextDate() {
+    const today  = new Date();
+    const currentHour  = today.getHours();
+    
+    // Verificar si es después de las 17:00
+    if (currentHour >= 17) {
+      const twoWeeks  = 14 * 24 * 60 * 60 * 1000;
+      const nextDate  = new Date(today.getTime() + twoWeeks);
+      return nextDate;
+    } else {
+      // Si es antes de las 17:00hrs, mantener la fecha actual
+      return today;
+    }
+  }
+
+  // Función para formatear la fecha
+  function formatDate(date) {
+    return date.toLocaleDateString("es", {
+      day: "2-digit",
+      month: "long",
+    });
+  }
+
+  const nextDate  = calculateNextDate();
+  const formattedDate  = formatDate(nextDate);
+
+  // Actualizar el elemento de fecha en el HTML con la próxima fecha calculada
+  const dateElement  = document.querySelector(".date");
+  if (dateElement) {
+    dateElement.textContent = formattedDate;
+  }
+
+  const END_DATE = 1711839600000;
+  const d = new Date(END_DATE);
+  const date = d.toLocaleTimeString("es", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
+  // obtener la zona horaria actual
+  const tzOffset = d.getTimezoneOffset() / 60;
+  const diff = tzOffset * -1;
+  const gmt = diff > 0 ? `GMT+${diff}` : `GMT-${Math.abs(diff)}`;
+
+  const TZ_DICTIONARY = {
+    "GMT+1": "CET",
+  };
+
+  const tz = TZ_DICTIONARY[gmt] ?? gmt;
+
+  const timeElement = document.querySelector(".time");
+  if (timeElement) {
+    timeElement.textContent = `${date}H ${tz}`;
+  }
+</script>
 
 <style is:global>
   .scroll-horizontal > a {
@@ -98,28 +137,3 @@ import MapMarkerIcon from "@/icons/map-marker.astro";
     }
   }
 </style>
-
-<script is:inline>
-  const END_DATE = 1711839600000;
-  const d = new Date(END_DATE);
-  const date = d.toLocaleTimeString("es", {
-    hour: "2-digit",
-    minute: "2-digit",
-  });
-
-  // obtener la zona horaria actual
-  const tzOffset = d.getTimezoneOffset() / 60;
-  const diff = tzOffset * -1;
-  const gmt = diff > 0 ? `GMT+${diff}` : `GMT-${Math.abs(diff)}`;
-
-  const TZ_DICTIONARY = {
-    "GMT+1": "CET",
-  };
-
-  const tz = TZ_DICTIONARY[gmt] ?? gmt;
-
-  const timeElement = document.querySelector(".time");
-  if (timeElement) {
-    timeElement.textContent = `${date}H ${tz}`;
-  }
-</script>
