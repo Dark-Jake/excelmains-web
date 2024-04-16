@@ -32,6 +32,7 @@ const ListOFCharacters = CHARACTERS.map((character) => {
         >
         </div>
         <img
+        transition:name="character-big-image"
           class="character-photo w-auto h-[480px] object-contain"
           alt="Splashart"
           src="/excelmains-web/img/characters/big/hutao-big.webp"
@@ -54,7 +55,7 @@ const ListOFCharacters = CHARACTERS.map((character) => {
       <footer class="absolute bottom-0 flex w-full justify-between text-center text-primary">
         <div class="flex flex-col gap-y-2">
           <h4 class="text-lg">Region</h4>
-          <p class="text-lg font-bold">Liyue</p>
+          <p class="text-lg font-bold character-region">Liyue</p>
           <a
             href="#"
             class="mt-10 inline-block font-semibold text-accent transition hover:scale-110"
@@ -65,7 +66,7 @@ const ListOFCharacters = CHARACTERS.map((character) => {
 
         <div class="flex flex-col gap-y-2">
           <h4 class="text-lg text-primary">Vision</h4>
-          <p class="text-lg font-bold">Pyro</p>
+          <p class="text-lg font-bold character-vision">Pyro</p>
           <a
             href="#"
             class="mt-10 inline-block font-semibold text-accent transition hover:scale-110"
@@ -77,15 +78,16 @@ const ListOFCharacters = CHARACTERS.map((character) => {
     </article>
     <aside class=" mt-4 grid gap-x-10 gap-y-4">
       {
-        ListOFCharacters.map(({ id, name, region, regionName }) => (
+        ListOFCharacters.map(({ id, name, region, regionName, vision }) => (
           <a
             class="character-link group relative flex h-20 items-center justify-center"
             title={`Mira la guia de ${name}`}
-            href={`/characters/${id}`}
+            href={`/excelmains-web/characters/${id}`}
             data-id={id}
             data-name={name}
             data-region={region}
             data-region-name={regionName}
+            data-vision={vision}
           >
             <img
               loading="lazy"
@@ -102,21 +104,25 @@ const ListOFCharacters = CHARACTERS.map((character) => {
 
 <script>
   const characterLinks = document.querySelectorAll(".character-link")
-  const characterTitle = document.querySelector(".character-title") as HTMLImageElement
+  const characterTitle = document.querySelector(".character-title") as HTMLElement
   const characterPhoto = document.querySelector(".character-photo") as HTMLImageElement
   const characterRegion = document.querySelector(".character-flag") as HTMLImageElement
+  const regionText = document.querySelector(".character-region") as HTMLElement
+  const visionText = document.querySelector(".character-vision") as HTMLElement
 
   characterLinks.forEach((link) => {
   link.addEventListener("mouseenter", (event) => {
     const target = event.currentTarget;
     if (target instanceof HTMLElement) {
-      const { id, name, region, regionName } = target.dataset;
+      const { id, name, region, regionName, vision } = target.dataset;
 
       const characterSrc = `/excelmains-web/img/characters/big/${id}-big.webp`;
 
       characterPhoto.src = characterSrc;
       characterTitle.innerText = name?.toLocaleLowerCase() ?? "";
       characterRegion.src = `/excelmains-web/img/flags/${region}.svg`;
+      regionText.innerText = regionName ?? "";
+      visionText.innerText = vision ?? "";
 
       characterPhoto.alt = `Fotografía de ${name}`;
       characterRegion.alt = `Escudo de ${regionName}`;
