@@ -4,7 +4,7 @@ export const CHARACTERS = [
     name: "Albedo",
     star: 5,
     weaponType: "Sword",
-    element: "Geo",
+    vision: "Geo",
     region: "Mon",
   },
   {
@@ -12,7 +12,7 @@ export const CHARACTERS = [
     name: "Alhaitham",
     star: 5,
     weaponType: "Sword",
-    element: "Dendro",
+    vision: "Dendro",
     region: "Sum",
   },
   {
@@ -20,7 +20,7 @@ export const CHARACTERS = [
     name: "Aloy",
     star: 5,
     weaponType: "Bow",
-    element: "Cryo",
+    vision: "Cryo",
     region: "Mon",
   },
   {
@@ -28,7 +28,7 @@ export const CHARACTERS = [
     name: "Amber",
     star: 4,
     weaponType: "Bow",
-    element: "Pyro",
+    vision: "Pyro",
     region: "Mon",
   },
   {
@@ -36,7 +36,7 @@ export const CHARACTERS = [
     name: "Ayaka",
     star: 5,
     weaponType: "Sword",
-    element: "Cryo",
+    vision: "Cryo",
     region: "Ina",
   },
   {
@@ -44,7 +44,7 @@ export const CHARACTERS = [
     name: "Ayato",
     star: 5,
     weaponType: "Sword",
-    element: "Hydro",
+    vision: "Hydro",
     region: "Ina",
   },
   {
@@ -52,7 +52,7 @@ export const CHARACTERS = [
     name: "Baizhu",
     star: 5,
     weaponType: "Catalyst",
-    element: "Dendro",
+    vision: "Dendro",
     region: "Ly",
   },
   {
@@ -60,7 +60,7 @@ export const CHARACTERS = [
     name: "Barbara",
     star: 4,
     weaponType: "Catalyst",
-    element: "Hydro",
+    vision: "Hydro",
     region: "Mon",
   },
   {
@@ -68,7 +68,7 @@ export const CHARACTERS = [
     name: "Beidou",
     star: 4,
     weaponType: "Claymore",
-    element: "Electro",
+    vision: "Electro",
     region: "Ly",
   },
   {
@@ -76,7 +76,7 @@ export const CHARACTERS = [
     name: "Bennett",
     star: 4,
     weaponType: "Sword",
-    element: "Pyro",
+    vision: "Pyro",
     region: "Mon",
   },
   {
@@ -84,7 +84,7 @@ export const CHARACTERS = [
     name: "Candace",
     star: 4,
     weaponType: "Polearm",
-    element: "Hydro",
+    vision: "Hydro",
     region: "Sum",
   },
   {
@@ -92,7 +92,7 @@ export const CHARACTERS = [
     name: "Charlotte",
     star: 4,
     weaponType: "Cataylst",
-    element: "Cryo",
+    vision: "Cryo",
     region: "Fon",
   },
   {
@@ -100,7 +100,7 @@ export const CHARACTERS = [
     name: "Chevreuse",
     star: 4,
     weaponType: "Polearm",
-    element: "Pyro",
+    vision: "Pyro",
     region: "Fon",
   },
   {
@@ -108,7 +108,7 @@ export const CHARACTERS = [
     name: "Chiori",
     star: 5,
     weaponType: "Polearm",
-    element: "Geo",
+    vision: "Geo",
     region: "Fon",
   },
   {
@@ -116,7 +116,7 @@ export const CHARACTERS = [
     name: "Chongyun",
     star: 4,
     weaponType: "Claymore",
-    element: "Cryo",
+    vision: "Cryo",
     region: "Ly",
   },
   {
@@ -124,7 +124,7 @@ export const CHARACTERS = [
     name: "Collei",
     star: 4,
     weaponType: "Bow",
-    element: "Dendro",
+    vision: "Dendro",
     region: "Sum",
   },
   {
@@ -132,7 +132,7 @@ export const CHARACTERS = [
     name: "Cyno",
     star: 5,
     weaponType: "Polearm",
-    element: "Electro",
+    vision: "Electro",
     region: "Sum",
   },
   {
@@ -140,7 +140,7 @@ export const CHARACTERS = [
     name: "Dehya",
     star: 5,
     weaponType: "Claaymore",
-    element: "Pyro",
+    vision: "Pyro",
     region: "Sum",
   },
   {
@@ -148,7 +148,7 @@ export const CHARACTERS = [
     name: "Diluc",
     star: 5,
     weaponType: "Claymore",
-    element: "Pyro",
+    vision: "Pyro",
     region: "Mon",
   },
   {
@@ -156,7 +156,7 @@ export const CHARACTERS = [
     name: "Diona",
     star: 4,
     weaponType: "Bow",
-    element: "Cryo",
+    vision: "Cryo",
     region: "Mon",
   },
   {
@@ -164,7 +164,7 @@ export const CHARACTERS = [
     name: "Dori",
     star: 4,
     weaponType: "Claymore",
-    element: "Electro",
+    vision: "Electro",
     region: "Sum",
   },
   {
@@ -172,7 +172,7 @@ export const CHARACTERS = [
     name: "Eula",
     star: 5,
     weaponType: "Claymore",
-    element: "Cryo",
+    vision: "Cryo",
     region: "Mon",
   },
   {
@@ -180,7 +180,7 @@ export const CHARACTERS = [
     name: "Faruzan",
     star: 4,
     weaponType: "Bow",
-    element: "Anemo",
+    vision: "Anemo",
     region: "Sum",
   },
   {
@@ -188,7 +188,7 @@ export const CHARACTERS = [
     name: "Fischl",
     star: 4,
     weaponType: "Bow",
-    element: "Electro",
+    vision: "Electro",
     region: "Mon",
   },
   {
@@ -196,7 +196,7 @@ export const CHARACTERS = [
     name: "Freminet",
     star: 4,
     weaponType: "Claymore",
-    element: "Cryo",
+    vision: "Cryo",
     region: "Fon",
   },
   {
@@ -204,7 +204,7 @@ export const CHARACTERS = [
     name: "Furina",
     star: 5,
     weaponType: "Sword",
-    element: "Hydro",
+    vision: "Hydro",
     region: "Fon",
   },
   {
@@ -212,7 +212,7 @@ export const CHARACTERS = [
     name: "Gaming",
     star: 4,
     weaponType: "Claymore",
-    element: "Pyro",
+    vision: "Pyro",
     region: "Fon",
   },
   {
@@ -220,7 +220,7 @@ export const CHARACTERS = [
     name: "Ganyu",
     star: 5,
     weaponType: "Bow",
-    element: "Cryo",
+    vision: "Cryo",
     region: "Ly",
   },
   {
@@ -228,7 +228,7 @@ export const CHARACTERS = [
     name: "Gorou",
     star: 4,
     weaponType: "Bow",
-    element: "Geo",
+    vision: "Geo",
     region: "Ina",
   },
   {
@@ -236,7 +236,7 @@ export const CHARACTERS = [
     name: "Heizou",
     star: 4,
     weaponType: "Cataylst",
-    element: "Anemo",
+    vision: "Anemo",
     region: "Ina",
   },
   {
@@ -244,7 +244,7 @@ export const CHARACTERS = [
     name: "Hu tao",
     star: 5,
     weaponType: "Polearm",
-    element: "Pyro",
+    vision: "Pyro",
     region: "Ly",
   },
   {
@@ -252,7 +252,7 @@ export const CHARACTERS = [
     name: "Itto",
     star: 5,
     weaponType: "Claymore",
-    element: "Geo",
+    vision: "Geo",
     region: "Ina",
   },
   {
@@ -260,7 +260,7 @@ export const CHARACTERS = [
     name: "Jean",
     star: 5,
     weaponType: "Sword",
-    element: "Anemo",
+    vision: "Anemo",
     region: "Mon",
   },
   {
@@ -268,7 +268,7 @@ export const CHARACTERS = [
     name: "Kaeya",
     star: 4,
     weaponType: "Sword",
-    element: "Cryo",
+    vision: "Cryo",
     region: "Mon",
   },
   {
@@ -276,7 +276,7 @@ export const CHARACTERS = [
     name: "Kaveh",
     star: 4,
     weaponType: "Claaymore",
-    element: "Dendro",
+    vision: "Dendro",
     region: "Sum",
   },
   {
@@ -284,7 +284,7 @@ export const CHARACTERS = [
     name: "Kazuha",
     star: 5,
     weaponType: "Sword",
-    element: "Anemo",
+    vision: "Anemo",
     region: "Ina",
   },
   {
@@ -292,7 +292,7 @@ export const CHARACTERS = [
     name: "Keqing",
     star: 5,
     weaponType: "Sword",
-    element: "Electro",
+    vision: "Electro",
     region: "Ly",
   },
   {
@@ -300,7 +300,7 @@ export const CHARACTERS = [
     name: "Kirara",
     star: 4,
     weaponType: "Sword",
-    element: "Dendro",
+    vision: "Dendro",
     region: "Ina",
   },
   {
@@ -308,7 +308,7 @@ export const CHARACTERS = [
     name: "Klee",
     star: 5,
     weaponType: "Catalyst",
-    element: "Pyro",
+    vision: "Pyro",
     region: "Mon",
   },
   {
@@ -316,7 +316,7 @@ export const CHARACTERS = [
     name: "Kokomi",
     star: 5,
     weaponType: "Catalyst",
-    element: "Hydro",
+    vision: "Hydro",
     region: "Ina",
   },
   {
@@ -324,7 +324,7 @@ export const CHARACTERS = [
     name: "Kuki",
     star: 4,
     weaponType: "Sword",
-    element: "Electro",
+    vision: "Electro",
     region: "Ina",
   },
   {
@@ -332,7 +332,7 @@ export const CHARACTERS = [
     name: "Layla",
     star: 4,
     weaponType: "Sword",
-    element: "Cryo",
+    vision: "Cryo",
     region: "Sum",
   },
   {
@@ -340,7 +340,7 @@ export const CHARACTERS = [
     name: "Lisa",
     star: 4,
     weaponType: "Cataylst",
-    element: "Electro",
+    vision: "Electro",
     region: "Mon",
   },
   {
@@ -348,7 +348,7 @@ export const CHARACTERS = [
     name: "Linette",
     star: 4,
     weaponType: "Sword",
-    element: "Anemo",
+    vision: "Anemo",
     region: "Fon",
   },
   {
@@ -356,7 +356,7 @@ export const CHARACTERS = [
     name: "Liney",
     star: 5,
     weaponType: "Bow",
-    element: "Pyro",
+    vision: "Pyro",
     region: "Fon",
   },
   {
@@ -364,7 +364,7 @@ export const CHARACTERS = [
     name: "Mika",
     star: 4,
     weaponType: "Polearm",
-    element: "Cryo",
+    vision: "Cryo",
     region: "Mon",
   },
   {
@@ -372,7 +372,7 @@ export const CHARACTERS = [
     name: "Mona",
     star: 5,
     weaponType: "Cataylst",
-    element: "Hydro",
+    vision: "Hydro",
     region: "Mon",
   },
   {
@@ -380,7 +380,7 @@ export const CHARACTERS = [
     name: "Nahida",
     star: 5,
     weaponType: "Cataylst",
-    element: "Denro",
+    vision: "Denro",
     region: "Sum",
   },
   {
@@ -388,7 +388,7 @@ export const CHARACTERS = [
     name: "Navia",
     star: 5,
     weaponType: "Claaymore",
-    element: "Geo",
+    vision: "Geo",
     region: "Fon",
   },
   {
@@ -396,7 +396,7 @@ export const CHARACTERS = [
     name: "Neuvillette",
     star: 5,
     weaponType: "Cataylst",
-    element: "Hydro",
+    vision: "Hydro",
     region: "Fon",
   },
   {
@@ -404,7 +404,7 @@ export const CHARACTERS = [
     name: "Nilou",
     star: 5,
     weaponType: "Sword",
-    element: "Hydro",
+    vision: "Hydro",
     region: "Sum",
   },
   {
@@ -412,7 +412,7 @@ export const CHARACTERS = [
     name: "Ningguang",
     star: 4,
     weaponType: "Cataylst",
-    element: "Geo",
+    vision: "Geo",
     region: "Ly",
   },
   {
@@ -420,7 +420,7 @@ export const CHARACTERS = [
     name: "Noelle",
     star: 4,
     weaponType: "Claymore",
-    element: "Geo",
+    vision: "Geo",
     region: "Mon",
   },
   {
@@ -428,7 +428,7 @@ export const CHARACTERS = [
     name: "Qiqi",
     star: 5,
     weaponType: "Sword",
-    element: "Cryo",
+    vision: "Cryo",
     region: "Mon",
   },
   {
@@ -436,7 +436,7 @@ export const CHARACTERS = [
     name: "Raiden",
     star: 5,
     weaponType: "Polearm",
-    element: "Electro",
+    vision: "Electro",
     region: "Ina",
   },
   {
@@ -444,7 +444,7 @@ export const CHARACTERS = [
     name: "Razor",
     star: 4,
     weaponType: "Claymore",
-    element: "Electro",
+    vision: "Electro",
     region: "Mon",
   },
   {
@@ -452,7 +452,7 @@ export const CHARACTERS = [
     name: "Rosaria",
     star: 4,
     weaponType: "Polearm",
-    element: "Cryo",
+    vision: "Cryo",
     region: "Mon",
   },
   {
@@ -460,7 +460,7 @@ export const CHARACTERS = [
     name: "Sara",
     star: 4,
     weaponType: "Bow",
-    element: "Electro",
+    vision: "Electro",
     region: "Ina",
   },
   {
@@ -468,7 +468,7 @@ export const CHARACTERS = [
     name: "Sayu",
     star: 4,
     weaponType: "Claymore",
-    element: "Anemo",
+    vision: "Anemo",
     region: "Ina",
   },
   {
@@ -476,7 +476,7 @@ export const CHARACTERS = [
     name: "Shenhe",
     star: 5,
     weaponType: "Polearm",
-    element: "Cryo",
+    vision: "Cryo",
     region: "Ly",
   },
   {
@@ -484,7 +484,7 @@ export const CHARACTERS = [
     name: "Sucrose",
     star: 4,
     weaponType: "Cataylst",
-    element: "Anemo",
+    vision: "Anemo",
     region: "Mon",
   },
   {
@@ -492,7 +492,7 @@ export const CHARACTERS = [
     name: "Tartaglia",
     star: 5,
     weaponType: "Bow",
-    element: "Hydro",
+    vision: "Hydro",
     region: "Sne",
   },
   {
@@ -500,7 +500,7 @@ export const CHARACTERS = [
     name: "Thoma",
     star: 4,
     weaponType: "Polearm",
-    element: "Pyro",
+    vision: "Pyro",
     region: "Ina",
   },
   {
@@ -508,7 +508,7 @@ export const CHARACTERS = [
     name: "Tighnari",
     star: 5,
     weaponType: "Bow",
-    element: "Dendro",
+    vision: "Dendro",
     region: "Sum",
   },
   {
@@ -516,7 +516,7 @@ export const CHARACTERS = [
     name: "Traveler",
     star: 5,
     weaponType: "Sword",
-    element: "Anemo",
+    vision: "Anemo",
     region: "Mon",
   },
   {
@@ -524,7 +524,7 @@ export const CHARACTERS = [
     name: "Venti",
     star: 5,
     weaponType: "Bow",
-    element: "Anemo",
+    vision: "Anemo",
     region: "Mon",
   },
   {
@@ -532,7 +532,7 @@ export const CHARACTERS = [
     name: "Wanderer",
     star: 5,
     weaponType: "Cataylst",
-    element: "Anemo",
+    vision: "Anemo",
     region: "Sum",
   },
   {
@@ -540,7 +540,7 @@ export const CHARACTERS = [
     name: "Wriothesley",
     star: 5,
     weaponType: "Cataylst",
-    element: "Cryo",
+    vision: "Cryo",
     region: "Fon",
   },
   {
@@ -548,7 +548,7 @@ export const CHARACTERS = [
     name: "Xiangling",
     star: 4,
     weaponType: "Polearm",
-    element: "Pyro",
+    vision: "Pyro",
     region: "Ly",
   },
   {
@@ -556,7 +556,7 @@ export const CHARACTERS = [
     name: "Xianyun",
     star: 5,
     weaponType: "Cataylst",
-    element: "Anemo",
+    vision: "Anemo",
     region: "Ly",
   },
   {
@@ -564,7 +564,7 @@ export const CHARACTERS = [
     name: "Xiao",
     star: 5,
     weaponType: "Polearm",
-    element: "Anemo",
+    vision: "Anemo",
     region: "Ly",
   },
   {
@@ -572,7 +572,7 @@ export const CHARACTERS = [
     name: "Xingqiu",
     star: 4,
     weaponType: "Sword",
-    element: "Hydro",
+    vision: "Hydro",
     region: "Ly",
   },
   {
@@ -580,7 +580,7 @@ export const CHARACTERS = [
     name: "Xinyan",
     star: 4,
     weaponType: "Claymore",
-    element: "Pyro",
+    vision: "Pyro",
     region: "Ly",
   },
   {
@@ -588,7 +588,7 @@ export const CHARACTERS = [
     name: "Yae miko",
     star: 5,
     weaponType: "Cataylst",
-    element: "Electro",
+    vision: "Electro",
     region: "Ina",
   },
   {
@@ -596,7 +596,7 @@ export const CHARACTERS = [
     name: "Yanfei",
     star: 4,
     weaponType: "Cataylst",
-    element: "Pyro",
+    vision: "Pyro",
     region: "Ly",
   },
   {
@@ -604,7 +604,7 @@ export const CHARACTERS = [
     name: "Yaoyao",
     star: 4,
     weaponType: "Polarm",
-    element: "Dendro",
+    vision: "Dendro",
     region: "Ly",
   },
   {
@@ -612,7 +612,7 @@ export const CHARACTERS = [
     name: "Yelan",
     star: 5,
     weaponType: "Bow",
-    element: "Hydro",
+    vision: "Hydro",
     region: "Ly",
   },
   {
@@ -620,7 +620,7 @@ export const CHARACTERS = [
     name: "Yoimiya",
     star: 5,
     weaponType: "Bow",
-    element: "Pyro",
+    vision: "Pyro",
     region: "Ina",
   },
   {
@@ -628,7 +628,7 @@ export const CHARACTERS = [
     name: "Zhongli",
     star: 5,
     weaponType: "Polearm",
-    element: "Geo",
+    vision: "Geo",
     region: "Ly",
   },
 ] as const;
