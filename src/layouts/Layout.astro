@@ -1,5 +1,9 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+
 import ButtonUp from "@/components/ButtonUp.astro";
+import Footer from "@/sections/Footer.astro";
+import KonamiCode from "@/components/KonamiCode.astro";
 import SmokeBackground from "@/components/SmokeBackground.astro";
 import "@fontsource-variable/jost";
 interface Props {
@@ -43,6 +47,8 @@ const { title, description } = Astro.props;
       const isDark = window.getThemePreference() === "dark";
       document.documentElement.classList.toggle("dark", isDark);
     </script>
+
+    <ViewTransitions />
   </head>
 
   <body
@@ -51,6 +57,8 @@ const { title, description } = Astro.props;
     <SmokeBackground />
     <div class="mx-auto max-w-6xl px-2 pt-16 md:pt-20 lg:px-10">
       <slot />
+      <Footer />
+      <KonamiCode />
     </div>
     <ButtonUp />
   </body>

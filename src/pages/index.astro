@@ -1,15 +1,12 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 
-import KonamiCode from "@/components/KonamiCode.astro";
-
 import Countdown from "@/sections/Countdown.astro";
-import Footer from "@/sections/Footer.astro";
 import Hero from "@/sections/Hero.astro";
 import Info from "@/sections/Info.astro";
 import PrincipalDate from "@/sections/PrincipalDate.astro";
 import Collaborators from "@/sections/Collaborators.astro";
-// import SelectCharacters from "@/sections/SelectCharacters.astro";
+import SelectCharacters from "@/sections/SelectCharacters.astro";
 ---
 
 <Layout
@@ -19,11 +16,9 @@ import Collaborators from "@/sections/Collaborators.astro";
   <Hero />
   <main>
     <PrincipalDate />
-   <!-- <SelectCharacters /> -->
+    <SelectCharacters />
     <Info />
     <Countdown />
     <Collaborators />
   </main>
-  <Footer />
-  <KonamiCode />
 </Layout>
