@@ -1,0 +1,27 @@
+---
+import { CHARACTERS } from "@/consts/characters.ts";
+import Layout from "@/layouts/Layout.astro";
+
+export function getStaticPaths() {
+  return CHARACTERS.map(({ id }) => ({
+    params: { id },
+  }));
+}
+---
+
+<Layout
+  description="Informacion del Personaje"
+  title="Albedo | Informacion del Personaje"
+>
+  <main>
+    <img
+      transition:name="character-big-image"
+      class="character-photo w-auto h-[480px] object-contain"
+      alt="Splashart"
+      src="/excelmains-web/img/characters/big/hutao-big.webp"
+      style="
+            filter: drop-shadow(0 0 20px rgba(0, 0, 0, .5));
+            mask-image: linear-gradient(to bottom, black 75%, transparent 100%);"
+    />
+  </main>
+</Layout>
